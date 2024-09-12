@@ -63,3 +63,9 @@ Depois, adicionar a URL do seu mongo no arquivo .env
 ## Uso do query params
   - Você pode fazer requisições GET com parâmetros de ordenação: [http://localhost:3000/items?orderBy=price&sortOrder=asc]
   - Esse é somente um exemplo dentro de vários parametros diferentes que você poderá usar!
+
+## Decisões técnicas tomadas
+
+ - As decisões técnicas do projeto envolveram primeiro configurar o Prisma para mapear o modelo de skins e conectar ao banco de dados. Depois, configurei
+   o NestJS, criando o itemsService para encapsular a lógica de busca com Prisma e o controlador para expor a rota. E implementei tratamento de exceções
+   (como a filtragem) para garantir robustez no projeto.
