@@ -26,12 +26,16 @@ export class ItemController {
     @Query('float') float?: string,
     @Query('price') price?: string,
     @Query('category') category?: string,
+    @Query('orderBy') orderBy?: 'price' | 'float',
+    @Query('sortOrder') sortOrder?: 'asc' | 'desc'
   ) {
     return this.itemsService.findAll({
       name,
       float,
       price: price ? parseFloat(price) : undefined,
       category,
+      orderBy,
+      sortOrder
     });
   }
 
