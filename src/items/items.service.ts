@@ -1,17 +1,17 @@
 import { Injectable } from '@nestjs/common';
-import { PrismaService } from 'src/prisma/prisma.service';
 import { Prisma } from '@prisma/client';
 
-// Defina a lista de categorias permitidas
+import { PrismaService } from '../prisma/prisma.service';
+
 const ALLOWED_CATEGORIES = ['rifles', 'pistolas', 'luvas', 'facas'];
 
-// Função para validar a categoria
+// Função que valida a categoria
 function isValidCategory(category: string): boolean {
   return ALLOWED_CATEGORIES.includes(category);
 }
 
 @Injectable()
-export class ItemService {
+export class ItemsService {
   constructor(private prisma: PrismaService) {}
 
   async create(data: Prisma.ItemCreateInput) {

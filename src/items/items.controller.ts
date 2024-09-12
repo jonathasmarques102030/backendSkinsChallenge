@@ -9,11 +9,11 @@ import {
   Query,
 } from '@nestjs/common';
 import { Prisma } from '@prisma/client';
-import { ItemService } from './item.service';
+import { ItemsService } from './items.service';
 
-@Controller('item')
-export class ItemController {
-  constructor(private readonly itemsService: ItemService) {}
+@Controller('items')
+export class ItemsController {
+  constructor(private readonly itemsService: ItemsService) {}
 
   @Post()
   create(@Body() createItemDto: Prisma.ItemCreateInput) {
